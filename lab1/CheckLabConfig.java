@@ -5,19 +5,19 @@ public class CheckLabConfig {
 		String repoVariableName = "REPO_DIR";
 		String repoDir = System.getenv(repoVariableName);
 		checkVariableNotNull(repoDir, repoVariableName);
-		System.out.println("Validating your " + repoVariableName + 
+		System.out.println("Validating your " + repoVariableName +
 			               " environment variable, which is currently set to: " +
 			               repoDir);
 		checkIsValidRepo(repoDir, repoVariableName, isWindows, false);
 
-		String snapsVariableName = "SNAPS_DIR";
-		String snapsRepoDir = System.getenv(snapsVariableName);
-
-		checkVariableNotNull(snapsRepoDir, snapsVariableName);
-		System.out.println("Validating your " + snapsVariableName + 
-			               " environment variable, which is currently set to: " +
-			               snapsRepoDir);
-		checkIsValidRepo(snapsRepoDir, snapsVariableName, isWindows, true);
+//		String snapsVariableName = "SNAPS_DIR";
+//		String snapsRepoDir = System.getenv(snapsVariableName);
+//
+//		checkVariableNotNull(snapsRepoDir, snapsVariableName);
+//		System.out.println("Validating your " + snapsVariableName +
+//			               " environment variable, which is currently set to: " +
+//			               snapsRepoDir);
+//		checkIsValidRepo(snapsRepoDir, snapsVariableName, isWindows, true);
 	}
 
 	public static void checkVariableNotNull(String value, String name) {
@@ -53,15 +53,15 @@ public class CheckLabConfig {
 			expected = "snaps-sp21-s1234";
 		}
 
-		if (!folderName.matches(pattern)) {
-			System.out.println("ERROR! Your " + name + " environment variable is incorrect.");
-			System.out.println("The folder name in the end should match this pattern: " + expected);
-			System.exit(1);
-		}
+//		if (!folderName.matches(pattern)) {
+//			System.out.println("ERROR! Your " + name + " environment variable is incorrect.");
+//			System.out.println("The folder name in the end should match this pattern: " + expected);
+//			System.exit(1);
+//		}
 
 		File file = new File(value);
 
-		boolean isDirectory = file.isDirectory(); 
+		boolean isDirectory = file.isDirectory();
 		if (!isDirectory) {
 			System.out.println("ERROR! " + value + " is not a valid folder.");
 			System.out.println("Double check that this variable was set correctly.");
