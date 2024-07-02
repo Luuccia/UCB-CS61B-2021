@@ -1,5 +1,5 @@
 *
-discussion/*
+/discussion/*
 !*/
 !**.java
 !**.txt
